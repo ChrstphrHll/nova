@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fan project to make Nova easier to play digitally. Finished project will include a compendium section outlining the games rules and the various sparks and their powers, as well as a pilot creation section used to create playable characters.
 
-Things you may want to cover:
+Email me at thchrstphrhll@gmail.com for any questions, concerns or feature requests.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks to Spencer Campbell of Gila RPGs for the wonderul game and the folks over at COMP/CON for inspiring this project.
