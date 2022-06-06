@@ -1,0 +1,22 @@
+<h1 class="heading">Sparks</h1>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <% @sparks.each do |spark| %>
+    <div class="col">
+      <div class="card h-100 spark-card-<%= spark.name.downcase %>">
+        <div class="card-body">
+          <h5 class="card-title mars"><%= spark.name %></h5>
+          <p class="card-text"><%= spark.flavor %></p>
+        </div>
+        <div class="card-footer">
+          <div class="d-grid">
+            <a href="<%= spark_path(spark) %>" 
+               class="btn btn-outline-<%= spark.name.downcase %> white">
+               Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

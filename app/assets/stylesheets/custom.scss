@@ -1,0 +1,67 @@
+$pyre: rgb(254, 90, 29);
+$scorch: rgb(112, 81, 136);
+$voyager: rgb(235, 114, 148);
+$warden: rgb(145, 130, 71);
+$pox: rgb(133, 186, 78);
+$grim: rgb(120, 224, 214);
+$drifter: rgb(70, 107, 58);
+$sanguine: rgb(216, 47, 43);
+$infernal: rgb(129, 51, 96);
+
+$spark-names: (
+    "pyre": $pyre,
+    "scorch": $scorch,
+    "voyager": $voyager,
+    "warden": $warden,
+    "pox": $pox,
+    "grim": $grim,
+    "drifter": $drifter,
+    "sanguine": $sanguine,
+    "infernal": $infernal,
+);
+
+$supernova: rgb(255, 199, 62);
+
+body {
+    background-color: black;
+    color: white;
+    margin-bottom: 30%;
+}
+
+.heading {
+    font-family: 'mars';
+    text-align: center;
+    font-size: 10rem;
+    padding: 4%;
+}
+
+.mars {
+    font-family: "mars";
+}
+
+.white {
+    color: white;
+}
+
+@each $name, $color in $spark-names {
+    .spark-card-#{$name} {
+        border-color: $color;
+        border-left-width: 20px;
+        background-color: black;
+        margin-bottom: 10px;  
+    }
+}
+
+@each $name, $color in $spark-names {
+    .spark-button-#{$name} {
+        color: $color;
+    }
+}
+
+@each $name, $color in $spark-names {
+    .spark-highlight-#{$name} {
+        background-color: $color;
+        color: black;
+        padding: 5px;
+    }
+}

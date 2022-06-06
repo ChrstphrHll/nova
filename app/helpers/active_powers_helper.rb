@@ -1,0 +1,2 @@
+module ActivePowersHelper
+end

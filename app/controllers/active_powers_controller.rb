@@ -1,0 +1,2 @@
+class ActivePowersController < ApplicationController
+end

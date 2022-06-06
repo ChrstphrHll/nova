@@ -1,0 +1,27 @@
+
+<h1 class="heading"><%= @spark.name %></h1>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Lore: </h3>
+<p><%= @spark.flavor %></p>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Description: </h3>
+<p><%= @spark.description %></p>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Passive: </h3>
+<ul>
+  <li><em><%= @spark.passive.name %></em>: <%= @spark.passive.description %></li>
+</ul>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Active Powers:</h3>
+<ul>
+  <% @spark.active_powers.each do |active_power| %>
+    <li><em><%= active_power.name %></em>: <%= active_power.description%> </li>
+  <% end %>
+</ul>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Supernova:</h3>
+<ul>
+  <li><em><%= @spark.supernova.name %></em>: <%= @spark.supernova.description %></li>
+</ul>
+
+<%= link_to 'Sparks', "/sparks" %>
