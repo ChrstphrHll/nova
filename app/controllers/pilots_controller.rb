@@ -6,6 +6,21 @@ class PilotsController < ApplicationController
     @pilots = current_user.pilots
   end
 
+  def show
+    p "cur pilo id:"
+    p Pilot.find(params[:id]).user_id
+    p "cur user id:"
+    p current_user.id
+    if current_user.id == Pilot.find(params[:id]).user_id
+      @pilot = Pilot.find(params[:id])
+      @access = true
+    else
+      @pilot = nil
+      @access = false
+    end
+  end
+
+
   def new
     @pilot = Pilot.new
   end
@@ -16,7 +31,6 @@ class PilotsController < ApplicationController
     if @pilot.save
       redirect_to @pilot
     else
-      p "ahhhhhhh!!!"
       render :new, status: :unprocessable_entity
     end
   end

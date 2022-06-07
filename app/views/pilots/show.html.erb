@@ -1,0 +1,9 @@
+<% if @access %>
+  <h1><%= @pilot.name %></h1>
+  <h2><%= @pilot.call_sign %></h2>
+  <p><%= @pilot.bio %></p>
+<% else %>
+  <h1>Pilot not public</h1>
+<% end %>
+
+<%= link_to 'Pilots', pilots_path %>
