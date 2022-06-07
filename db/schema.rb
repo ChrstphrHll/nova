@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_03_171604) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_06_181221) do
   create_table "active_powers", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -36,6 +36,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_171604) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spark_id"], name: "index_persistent_mods_on_spark_id"
+  end
+
+  create_table "pilots", force: :cascade do |t|
+    t.string "name"
+    t.string "call_sign"
+    t.text "bio"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pilots_on_user_id"
   end
 
   create_table "power_mods", force: :cascade do |t|
@@ -64,9 +74,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_171604) do
     t.index ["spark_id"], name: "index_supernovas_on_spark_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "active_powers", "sparks"
   add_foreign_key "passives", "sparks"
   add_foreign_key "persistent_mods", "sparks"
+  add_foreign_key "pilots", "users"
   add_foreign_key "power_mods", "sparks"
   add_foreign_key "supernovas", "sparks"
 end
