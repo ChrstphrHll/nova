@@ -1,9 +1,33 @@
 <% if @access %>
-  <h1><%= @pilot.name %></h1>
-  <h2><%= @pilot.call_sign %></h2>
-  <p><%= @pilot.bio %></p>
+  <h1 class="display-1"><%= @pilot.name %><small class="text-muted"> (<%= @pilot.pronouns %>)</small></h1>
+  <h3 class="spark-highlight-<%= @pilot.spark.name.downcase %> mars"><%= @pilot.call_sign %></h3>
+    
+  <% if @pilot.description %>
+    <h4>Phyisical Description</h4>
+    <p><%= @pilot.description %></p>
+  <% end %>
+
+  <% if @pilot.bio %>
+    <h4>Biography</h4>
+    <p><%= @pilot.bio %></p>
+  <% end %>
+  <p>
+    <i class="bi-sun-fill icon-styling"></i>
+    <%= @pilot.sun %>
+  </p>
+  <p>
+    <i class="bi-moon-fill icon-styling"></i>
+    <%= @pilot.moon %>
+  </p>
+  <p>
+    <i class="bi-sunglasses icon-styling"></i>
+    <%= @pilot.shade %>
+  </p>
+
+
+  <%= link_to "Edit", edit_pilot_path(@pilot)%>
+  <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>
 <% else %>
   <h1>Pilot not public</h1>
 <% end %>
 
-<%= link_to 'Pilots', pilots_path %>

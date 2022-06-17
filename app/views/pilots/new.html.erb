@@ -1,33 +1,3 @@
 <h1>New Pilot</h1>
 
-<%= form_with model: @pilot do |form| %>
-  <div>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-    <% @pilot.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :call_sign %><br>
-    <%= form.text_field :call_sign %>
-    <% @pilot.errors.full_messages_for(:call_sign).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :bio %><br>
-    <%= form.text_area :bio %>
-    <% @pilot.errors.full_messages_for(:bio).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render "form", pilot: @pilot %>

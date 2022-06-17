@@ -1,0 +1,69 @@
+<%= form_with model: pilot do |form| %>
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% pilot.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :call_sign %><br>
+    <%= form.text_field :call_sign %>
+    <% pilot.errors.full_messages_for(:call_sign).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :pronouns %><br>
+    <%= form.text_field :pronouns %>
+    <% pilot.errors.full_messages_for(:pronouns).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <% pilot.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :bio %><br>
+    <%= form.text_area :bio %>
+    <% pilot.errors.full_messages_for(:bio).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :spark_id %><br>
+    <%= form.select :spark_id, @sparks.map {|s| [s.name, s.id]} %>
+  </div>
+
+  <div class="row">
+    <p>
+    <div class="col">
+      <%= form.label :sun %><br>
+      <%= form.number_field :sun, value: 1, in: 1..4, step: 1 %>
+    </div>
+    <div class="col">
+      <%= form.label :moon %><br>
+      <%= form.number_field :moon, value: 1, in: 1..4, step: 1 %>
+    </div>
+    <div class="col">
+      <%= form.label :shade %><br>
+      <%= form.number_field :shade, value: 1, in: 1..4, step: 1 %>
+    </div>
+  </div>
+  
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

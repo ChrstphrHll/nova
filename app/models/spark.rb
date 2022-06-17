@@ -4,4 +4,5 @@ class Spark < ApplicationRecord
     has_one :supernova
     has_many :persistent_mods
     has_many :power_mods
+    has_many :pilots
 end

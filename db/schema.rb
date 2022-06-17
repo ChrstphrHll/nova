@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_06_181221) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_193348) do
   create_table "active_powers", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -45,6 +45,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_181221) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "pronouns"
+    t.integer "spark_id", default: 1, null: false
+    t.integer "shade"
+    t.integer "sun"
+    t.integer "moon"
+    t.index ["spark_id"], name: "index_pilots_on_spark_id"
     t.index ["user_id"], name: "index_pilots_on_user_id"
   end
 
@@ -90,6 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_181221) do
   add_foreign_key "active_powers", "sparks"
   add_foreign_key "passives", "sparks"
   add_foreign_key "persistent_mods", "sparks"
+  add_foreign_key "pilots", "sparks"
   add_foreign_key "pilots", "users"
   add_foreign_key "power_mods", "sparks"
   add_foreign_key "supernovas", "sparks"

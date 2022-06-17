@@ -1,7 +1,7 @@
-<h1 class="heading">Pilots</h1>
+<h1 class="display-1 mars">Pilots</h1>
 
 <% @pilots.each do |p|%>
-   <h6 class="heading"><%= p.name %></h6>
+   <p><%= link_to p.name, p %></p>
 <% end %>
 
 <%= link_to "New Pilot", new_pilot_path %>

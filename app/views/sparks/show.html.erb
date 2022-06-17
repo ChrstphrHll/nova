@@ -1,5 +1,5 @@
 
-<h1 class="heading"><%= @spark.name %></h1>
+<h1 class="display-1 mars"><%= @spark.name %></h1>
 
 <h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Lore: </h3>
 <p><%= @spark.flavor %></p>
@@ -24,4 +24,28 @@
   <li><em><%= @spark.supernova.name %></em>: <%= @spark.supernova.description %></li>
 </ul>
 
-<%= link_to 'Sparks', "/sparks" %>
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Persistent Mods:</h3>
+<div class="container">
+  <div class="row row-cols-2">
+    <% @spark.persistent_mods.each do |mod| %>
+      <div class="col">
+        <p><em class="mars spark-highlight-<%= @spark.name.downcase %>"><%= mod.name %></em> <%= mod.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<h3 class="mars w-100 spark-highlight-<%= @spark.name.downcase %>">Power Mods:</h3>
+<div class="container">
+  <div class="row row-cols-2">
+    <% @spark.power_mods.each do |mod| %>
+      <div class="col">
+        <p>
+          <em class="mars spark-highlight-<%= @spark.name.downcase %>"><%= mod.name %></em>
+          <%= mod.description %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+

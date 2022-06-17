@@ -1,6 +1,19 @@
 <h1 class="heading">Nova</h1>
 
 <div class="d-flex justify-content-evenly">
-  <a class="btn btn-outline-light" href="<%= sparks_path %>">Sparks</a>
-  <a class="btn btn-outline-light" href="<%= pilots_path %>">Pilots</a>
+  <a class="btn btn-outline-dark" href="<%= sparks_path %>">Sparks</a>
+  <button data-controller="eyes" class="btn btn-outline-dark">Test Toast</button>
+  <a class="btn btn-outline-dark" href="<%= pilots_path %>">Pilots</a>
 </div>
+
+<div class="m-5"></div>
+<div data-controller="eyes">
+  <input type="text">
+  <button data-action="click->eyes#blink">vblik</button>
+</div>
+
+ <div data-controller="console" data-action="resize@window->console#logEvent offline@window->console#logEvent">
+   <button data-action="click->console#logEvent">Click</button>
+   <div data-action="mouseover->console#logEvent">Mouse Over</div>
+   <input type="text" data-action="change->console#logEvent paste->console#logEvent" />
+ </div>

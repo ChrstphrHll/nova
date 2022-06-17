@@ -1,0 +1,10 @@
+<%= form_with model: @pilot, class:"" do |form| %>
+  <div class="row">
+    <label for="pilot_sun" class="bi-sun icon-styling form-label" \>
+    <%= form.range_field :sun, in: 1..6, class: "form-control" %>
+  </div>
+
+  <div class="row">
+    <%= form.submit %>
+  </div>
+<% end %>
