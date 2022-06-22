@@ -1,4 +1,4 @@
-<%= form_with model: pilot do |form| %>
+<%= form_with model: pilot, class: "container" do |form|%>
   <div>
     <%= form.hidden_field :user_id, value: current_user.id %>
 

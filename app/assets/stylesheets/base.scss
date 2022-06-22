@@ -4,11 +4,33 @@ body {
     margin-bottom: 30%;
 }
 
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: $gray-900;
+    color: white;
+}
+
+label {
+    font-size: 30px;
+}
+
 .heading {
     font-family: 'mars';
     text-align: center;
-    font-size: 10vw;
+    font-size: min(20vw, 200px);
     padding: 4%;
+}
+
+.quote {
+    text-align: center;
+    font-size: min(2em, 5vw);
+    font-family: 'mars';
+    width: 80%;
+    margin: auto;
 }
 
 .mars {
