@@ -1,6 +1,6 @@
 <% if @access %>
   <h1 class="display-1"><%= @pilot.name %><small class="text-muted"> (<%= @pilot.pronouns %>)</small></h1>
-  <h3 class="spark-highlight-<%= @pilot.spark.name.downcase %> mars"><%= @pilot.call_sign %></h3>
+  <h3 class="spark-highlight-<%= @pilot.get_accent %> mars"><%= @pilot.call_sign %></h3>
     
   <% if @pilot.description %>
     <h4>Phyisical Description</h4>

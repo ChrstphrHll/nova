@@ -1,7 +1,7 @@
 <h1 class="display-1 mars">Pilots</h1>
 
 <% @pilots.each do |p|%>
-   <p><%= link_to p.name, p %></p>
+   <%= render partial: "pilot_card", locals: { pilot: p } %>
 <% end %>
 
 <%= link_to "New Pilot", new_pilot_path %>

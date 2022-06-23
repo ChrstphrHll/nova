@@ -1,13 +1,31 @@
 class Pilot < ApplicationRecord
   belongs_to :user
 
-  belongs_to :spark
+  belongs_to :author, optional: true
+
 
   validates :name, presence: true
   validates :call_sign, presence: true
   # validates :stat_sums
   # validates :bio, presence: true, length: { minimum: 10 }
 
+  def spark
+    if self.spark_id
+      Spark.find(self.spark_id)
+    else
+      nil
+    end
+  end
+
+  def get_accent
+    if self.spark_id
+      Spark.find(self.spark_id).name.downcase
+    else
+      "sparkless"
+    end
+  end
+
+  private
   def stat_sums
     @stats = {sun: @pilot.sun, moon: @pilot.moon, shade: @pilot.shade}
     @stats.each { |stat, value|

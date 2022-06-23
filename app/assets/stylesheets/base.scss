@@ -41,12 +41,27 @@ label {
     color: white;
 }
 
+.spark-card {
+    border-color: white;
+    border-left-width: 20px;
+    background-color: black;
+    margin-bottom: 10px;  
+    transition: 0.3s;
+}
+
+.pilot-card:hover {
+    border-left-width: 40px;
+}
+
+.spark-highlight-sparkless {
+    background-color: white;
+    color: black;
+    padding: 5px;
+}
+
 @each $name, $color in $spark-names {
     .spark-card-#{$name} {
-        border-color: $color;
-        border-left-width: 20px;
-        background-color: black;
-        margin-bottom: 10px;  
+        border-color: $color; 
     }
     .spark-highlight-#{$name} {
         background-color: $color;

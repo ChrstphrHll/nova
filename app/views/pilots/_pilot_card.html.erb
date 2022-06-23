@@ -1,0 +1,8 @@
+<div class="card spark-card pilot-card <% if pilot.spark%> spark-card-<%= pilot.spark.name.downcase %> <% end %>">
+  <div class="card-body">
+    <h4 class="card-title"><%= pilot.name %></h4>
+    <h5 class="card-subtitle text-muted"><%= pilot.call_sign %></h5>
+    <p class="card-text text-truncate"><%= pilot.bio %></p>
+    <%= link_to "Full Dossier", pilot, class: "stretched-link" %>
+  </div>
+</div>

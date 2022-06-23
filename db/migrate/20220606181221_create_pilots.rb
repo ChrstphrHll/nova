@@ -4,7 +4,7 @@ class CreatePilots < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :call_sign
       t.text :bio
-      t.references :user, null: false, foreign_key: true
+      t.references :user, null: true, foreign_key: true
 
       t.timestamps
     end
