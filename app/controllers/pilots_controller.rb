@@ -24,6 +24,11 @@ class PilotsController < ApplicationController
     @sparks = Spark.all
   end
 
+  def spark_select
+    @pilot = Pilot.find(params[:id])
+    @sparks = Spark.all
+  end
+
   def edit
     @pilot = Pilot.find(params[:id])
     @sparks = Spark.all

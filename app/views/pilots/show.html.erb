@@ -27,6 +27,7 @@
 
   <%= link_to "Edit", edit_pilot_path(@pilot)%>
   <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>
+  <%= link_to "Select Spark", "/pilots/#{@pilot.id}/spark_select" %>
 <% else %>
   <h1>Pilot not public</h1>
 <% end %>

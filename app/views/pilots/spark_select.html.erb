@@ -1,0 +1,14 @@
+<h1 class="display-1 mars">Select Spark</h1>
+
+<%= form_with model: @pilot do |form|%>
+
+  <div>
+    <%= form.label :spark_id %><br>
+    <%= form.select :spark_id, @sparks.map {|s| [s.name, s.id]} %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

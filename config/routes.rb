@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   
   resources :pilots
   get '/pilots/:id/edit_sun', to: 'pilots#edit_sun'
+  get '/pilots/:id/spark_select', to: 'pilots#spark_select'
 end
