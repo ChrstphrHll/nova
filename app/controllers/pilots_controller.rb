@@ -60,6 +60,6 @@ class PilotsController < ApplicationController
 
   private
   def pilot_params
-    params.require(:pilot).permit(:user_id, :name, :call_sign, :pronouns, :description, :bio, :sun, :moon, :shade, :spark_id)
+    params.require(:pilot).permit(:user_id, :name, :call_sign, :pronouns, :description, :bio, :sun, :moon, :shade, :spark_id, :image)
   end
 end

@@ -12,3 +12,6 @@ application.register("eyes", EyesController)
 
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
+
+import TooltipController from "./tooltip_controller.js"
+application.register("tooltip", TooltipController)

@@ -24,6 +24,11 @@
     <%= @pilot.shade %>
   </p>
 
+  <% if @pilot.image.attached? %>
+    <%= image_tag @pilot.image, class: "pilot-show-img" %>
+  <% else %>
+    <%= image_tag 'no_img.png', class: "pilot-show-img" %>
+  <% end %>
 
   <%= link_to "Edit", edit_pilot_path(@pilot)%>
   <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>

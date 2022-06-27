@@ -1,9 +1,10 @@
 class Pilot < ApplicationRecord
   belongs_to :user
 
-  belongs_to :author, optional: true
+  belongs_to :spark, optional: true
 
-
+  has_one_attached :image
+  
   validates :name, presence: true
   validates :call_sign, presence: true
   # validates :stat_sums

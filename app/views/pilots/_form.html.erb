@@ -1,8 +1,8 @@
 <%= form_with model: pilot do |form|%>
-  <div>
+  <div data-controller="tooltip">
     <%= form.hidden_field :user_id, value: current_user.id %>
 
-    <%= form.label :name %><br>
+    <%= form.label :name %> <span class="bi-info-circle-fill white" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></span><br>
     <%= form.text_field :name %>
     <% pilot.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
@@ -41,29 +41,26 @@
     <% end %>
   </div>
 
-  <!--
-  <div>
-    <%= form.label :spark_id %><br>
-    <%= form.select :spark_id, @sparks.map {|s| [s.name, s.id]} %>
-  </div>
-  -->
-
-  <div class="row">
+  <div class="row text-center">
     <p>
     <div class="col">
       <%= form.label :sun %><br>
-      <%= form.number_field :sun, value: 1, in: 1..4, step: 1 %>
+      <%= form.number_field :sun, value: 1, in: 1..4, step: 1, class: "text-center" %>
     </div>
     <div class="col">
       <%= form.label :moon %><br>
-      <%= form.number_field :moon, value: 1, in: 1..4, step: 1 %>
+      <%= form.number_field :moon, value: 1, in: 1..4, step: 1, class: "text-center" %>
     </div>
     <div class="col">
       <%= form.label :shade %><br>
-      <%= form.number_field :shade, value: 1, in: 1..4, step: 1 %>
+      <%= form.number_field :shade, value: 1, in: 1..4, step: 1, class: "text-center" %>
     </div>
   </div>
   
+  <div>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+  </div>
 
   <div>
     <%= form.submit %>
