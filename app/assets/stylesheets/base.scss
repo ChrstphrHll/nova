@@ -32,13 +32,13 @@ label {
 .heading {
     font-family: 'mars';
     text-align: center;
-    font-size: unquote("min(20vw, 200px)");
+    font-size: min(20vw, 10em);
     padding: 4%;
 }
 
 .quote {
     text-align: center;
-    font-size: unquote("min(2em, 5vw)");
+    font-size: min(2em, 5vw);
     font-family: 'mars';
     width: 80%;
     margin: auto;
