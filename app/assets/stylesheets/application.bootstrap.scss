@@ -14,8 +14,10 @@ $theme-colors: (
 @import 'bootstrap-icons/font/bootstrap-icons.scss';
 
 @import 'base.scss';
-@import 'pilot-card.scss';
-@import 'pilot-show.scss';
+@import 'homepage.css';
+@import 'pilot/pilot-card.scss';
+@import 'pilot/pilot-show.scss';
+@import 'pilot/pilot-blurb.scss';
 
 @font-face {
   font-family: 'mars';

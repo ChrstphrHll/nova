@@ -1,4 +1,6 @@
 class PilotsController < ApplicationController
+  layout :resolve_layout
+
   def index
     if flash[:just_outed]
       redirect_to "/" and return
@@ -59,6 +61,15 @@ class PilotsController < ApplicationController
   end
 
   private
+  def resolve_layout
+    case action_name
+    when "show"
+      "wide"
+    else
+      "application"
+    end
+  end
+
   def pilot_params
     params.require(:pilot).permit(:user_id, :name, :call_sign, :pronouns, :description, :bio, :sun, :moon, :shade, :spark_id, :image)
   end

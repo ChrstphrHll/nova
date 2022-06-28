@@ -1,7 +1,6 @@
 body {
     background-color: black;
     color: white;
-    margin-bottom: 30%;
 }
 
 input, textarea {
@@ -29,19 +28,6 @@ label {
     text-decoration: inherit;
 }
 
-.heading {
-    font-family: 'mars';
-    text-align: center;
-    padding: 4%;
-}
-
-.quote {
-    text-align: center;
-    font-family: 'mars';
-    width: 80%;
-    margin: auto;
-}
-
 .mars {
     font-family: "mars";
 }
@@ -60,6 +46,12 @@ label {
 
 .spark-highlight-sparkless {
     background-color: white;
+    color: black;
+    padding: 5px;
+}
+
+.spark-highlight-supernova {
+    background-color: $supernova;
     color: black;
     padding: 5px;
 }

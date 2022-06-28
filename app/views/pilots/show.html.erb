@@ -1,38 +1,17 @@
 <% if @access %>
-  <h1 class="display-1"><%= @pilot.name %><small class="text-muted"> (<%= @pilot.pronouns %>)</small></h1>
-  <h3 class="spark-highlight-<%= @pilot.get_accent %> mars"><%= @pilot.call_sign %></h3>
-    
-  <% if @pilot.description %>
-    <h4>Phyisical Description</h4>
-    <p><%= @pilot.description %></p>
-  <% end %>
+  <div class="row">
+    <div class="col-sm-4 order-sm-2">
+      <%= render partial: 'pilot_blurb', locals: { pilot: @pilot }%>
+    </div>
 
-  <% if @pilot.bio %>
-    <h4>Biography</h4>
-    <p><%= @pilot.bio %></p>
-  <% end %>
-  <p>
-    <i class="bi-sun-fill icon-styling"></i>
-    <%= @pilot.sun %>
-  </p>
-  <p>
-    <i class="bi-moon-fill icon-styling"></i>
-    <%= @pilot.moon %>
-  </p>
-  <p>
-    <i class="bi-sunglasses icon-styling"></i>
-    <%= @pilot.shade %>
-  </p>
+    <div class="col order-sm-1">
+      
 
-  <% if @pilot.image.attached? %>
-    <%= image_tag @pilot.image, class: "pilot-show-img" %>
-  <% else %>
-    <%= image_tag 'no_img.png', class: "pilot-show-img" %>
-  <% end %>
-
-  <%= link_to "Edit", edit_pilot_path(@pilot)%>
-  <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>
-  <%= link_to "Select Spark", "/pilots/#{@pilot.id}/spark_select" %>
+      <%= link_to "Edit", edit_pilot_path(@pilot)%>
+      <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>
+      <%= link_to "Select Spark", "/pilots/#{@pilot.id}/spark_select" %>
+    </div>
+  </div>
 <% else %>
   <h1>Pilot not public</h1>
 <% end %>

@@ -1,0 +1,25 @@
+<div class="blurb overflow-scroll">
+  <h3> <%= pilot.name %> <small class="text-muted"> (<%= @pilot.pronouns %>)</small> </h3> 
+
+  <h4 class="spark-highlight-<%= pilot.get_accent %> mars"><%= pilot.call_sign %></h4>
+
+  <div class="d-flex justify-content-center">
+    <% if pilot.image.attached? %>
+      <%= image_tag pilot.image, class: "profile-img" %>
+    <% else %>
+      <%= image_tag 'no_img.png', class: "profile-img" %>
+    <% end %>
+  </div>
+
+  <%= render partial: 'stats', locals: { sun: pilot.sun, moon: pilot.moon, shade: pilot.shade, accent: pilot.get_accent } %>
+
+  <p class="mt-2">
+    <strong> Description: </strong>
+    <%= pilot.description %>
+  </p>
+  <p>
+    <strong> Biography: </strong>
+    <%= pilot.bio %>
+  </p>
+
+</div>
