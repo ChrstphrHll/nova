@@ -22,4 +22,10 @@
     <%= pilot.bio %>
   </p>
 
+  <div class="d-grid">
+    <%= button_to "Edit", edit_pilot_path(@pilot), class: "btn btn-outline-light mb-2 w-100"%>
+    <%= button_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun", class: "btn btn-outline-light mb-2"%>
+  </div>
+
 </div>
+

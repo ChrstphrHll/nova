@@ -5,11 +5,7 @@
     </div>
 
     <div class="col order-sm-1">
-      
-
-      <%= link_to "Edit", edit_pilot_path(@pilot)%>
-      <%= link_to "Edit sun", "/pilots/#{@pilot.id}/edit_sun"%>
-      <%= link_to "Select Spark", "/pilots/#{@pilot.id}/spark_select" %>
+      <%= render 'spark_blurb' %>
     </div>
   </div>
 <% else %>

@@ -1,0 +1,16 @@
+<div class="h-100 d-flex flex-column">
+  <% if @pilot.spark_id == nil %>
+    <h1>No Spark Selected :(</h1>
+    <%= button_to "Select Spark", "/pilots/#{@pilot.id}/spark_select", class: "btn btn-outline-light"%>
+  <% else %>
+    <div class="d-flex justify-content-between h-100">
+      <div class="flex-grow">
+        <h1><%= @pilot.spark.name %> Spark Selected :)</h1>
+      </div>
+        
+      <%= render partial: 'gauge', locals: { max: 3, title: "HP", color: "red" } %>
+      <%= render partial: 'gauge', locals: { max: 3, title: "FU", color: "yellow" } %>
+    </div>
+
+  <% end %>
+</div>

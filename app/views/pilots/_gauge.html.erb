@@ -1,0 +1,10 @@
+<div class="h-100 d-flex flex-column">
+  <p class="mb-0 text-center mars"><%= title %></p>
+  <button>:)</button>
+  <div class="d-flex m-0 flex-column flex-fill">
+    <% max.times do %>
+      <div class="gauge h-100 flex-fill" style="background-color: <%= color %>;"></div>
+    <% end %>
+  </div>
+  <button>:)</button>
+</div>
