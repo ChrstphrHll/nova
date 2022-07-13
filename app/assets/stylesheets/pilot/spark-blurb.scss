@@ -4,7 +4,35 @@
 }
 
 .gauge {
-    width: 30px;
-    background-color: red;
+    width: 100%;
+    background-color: rgb(42, 40, 42);
     margin-bottom: 3px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.gauge-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gauge-bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.gauge:hover {
+    background-color: rgb(85, 81, 85) !important;
+}
+
+.gauge-hp {
+    background-color: $sanguine;
+}
+
+.gauge-fu {
+    background-color: $supernova;
+}
+
+.gauge-container {
+    margin-left: 3px;
 }

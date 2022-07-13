@@ -7,9 +7,15 @@
       <div class="flex-grow">
         <h1><%= @pilot.spark.name %> Spark Selected :)</h1>
       </div>
-        
-      <%= render partial: 'gauge', locals: { max: 3, title: "HP", color: "red" } %>
-      <%= render partial: 'gauge', locals: { max: 3, title: "FU", color: "yellow" } %>
+      
+      <div class="d-flex flex-row">
+        <div>
+          <%= render partial: 'gauge', locals: { max: 3, current: 2, title: "HP"} %>
+        </div>
+        <div>
+          <%= render partial: 'gauge', locals: { max: 10, current: 7, title: "FU"} %>
+        </div>
+      </div>
     </div>
 
   <% end %>

@@ -10,6 +10,9 @@ application.register("console", ConsoleController)
 import EyesController from "./eyes_controller.js"
 application.register("eyes", EyesController)
 
+import GaugeController from "./gauge_controller.js"
+application.register("gauge", GaugeController)
+
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 

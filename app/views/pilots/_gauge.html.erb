@@ -1,10 +1,23 @@
-<div class="h-100 d-flex flex-column">
+<div class="h-100 d-flex flex-column gauge-container">
   <p class="mb-0 text-center mars"><%= title %></p>
-  <button>:)</button>
   <div class="d-flex m-0 flex-column flex-fill">
-    <% max.times do %>
-      <div class="gauge h-100 flex-fill" style="background-color: <%= color %>;"></div>
+
+    <div class="gauge gauge-top gauge-<%= title.downcase %> h-100 flex-fill" 
+         data-controller="gauge" 
+         data-action="click->gauge#flop"
+         data-gauge-color-value="<%= title.downcase %>"></div>
+
+    <% (max - 2).times do %>
+      <div class="gauge gauge-<%= title.downcase %> h-100 flex-fill" 
+           data-controller="gauge" 
+           data-action="click->gauge#flop"
+           data-gauge-color-value="<%= title.downcase %>"></div>
     <% end %>
+
+    <div class="gauge gauge-bottom gauge-<%= title.downcase %> h-100 flex-fill" 
+         data-controller="gauge"
+         data-action="click->gauge#flop"
+         data-gauge-color-value="<%= title.downcase %>"></div>
+
   </div>
-  <button>:)</button>
 </div>
